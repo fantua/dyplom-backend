@@ -1,0 +1,47 @@
+{
+  "name": "Objects",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "mixins": {
+    "TimeStamp": true,
+    "CascadeDelete": {
+      "relations": ["Statistics"],
+      "deepDelete": true
+    }
+  },
+  "properties": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "string"
+    }
+  },
+  "validations": [],
+  "relations": {
+    "Crashes": {
+      "type": "hasMany",
+      "model": "Crashes",
+      "foreignKey": "objectId"
+    },
+    "Statistics": {
+      "type": "hasMany",
+      "model": "Statistics",
+      "foreignKey": "objectId"
+    }
+  },
+  "acls": [
+    {
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "permission": "DENY"
+    },
+    {
+      "principalType": "ROLE",
+      "principalId": "$authenticated",
+      "permission": "ALLOW"
+    }
+  ],
+  "methods": {}
+}

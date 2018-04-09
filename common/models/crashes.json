@@ -1,0 +1,40 @@
+{
+  "name": "Crashes",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "mixins": {
+    "TimeStamp": true
+  },
+  "properties": {
+    "objectId": {
+      "type": "number",
+      "index": true,
+      "required": true
+    },
+    "code": {
+      "type": "number",
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {
+    "Object": {
+      "type": "belongsTo",
+      "model": "Objects",
+      "foreignKey": "id"
+    }
+  },
+  "acls": [
+    {
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "permission": "DENY"
+    },
+    {
+      "principalType": "ROLE",
+      "principalId": "$authenticated",
+      "permission": "ALLOW"
+    }
+  ],
+  "methods": {}
+}

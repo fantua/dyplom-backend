@@ -1,0 +1,1 @@
+Master's Thesis - «Development of the distributed WEB-oriented data acquisition system server component for house water metering units». (Back-end part)

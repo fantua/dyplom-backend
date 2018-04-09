@@ -1,0 +1,14 @@
+{
+  "extends": "loopback",
+  "parserOptions": {
+    "ecmaVersion": 8
+  },
+  "rules": {
+    "max-len": 0,
+    "indent": ["error", 4],
+    "array-bracket-spacing": 0,
+    "object-curly-spacing": 0,
+    "no-multiple-empty-lines": 0,
+    "no-trailing-spaces": 0
+  }
+}
